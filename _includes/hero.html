@@ -18,7 +18,11 @@
         </div>
       </div>
       <div class="hero-image">
+        {% if featured.cover_image %}
+        <img src="{{ featured.cover_image }}" alt="{{ featured.title }}" class="hero-image-actual" loading="lazy">
+        {% else %}
         <div class="hero-image-placeholder"></div>
+        {% endif %}
       </div>
     </div>
   </div>

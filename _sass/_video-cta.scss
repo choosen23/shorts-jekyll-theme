@@ -1,0 +1,51 @@
+// Video CTA — end-of-post social cross-promotion
+.video-cta {
+  margin: 40px 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+}
+
+.video-cta-title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.video-cta-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.video-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.15s;
+
+  &:hover { opacity: 0.85; }
+
+  svg { flex-shrink: 0; }
+}
+
+.video-cta-youtube { background: #FF0000; }
+.video-cta-tiktok { background: #010101; }
+.video-cta-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+@media (min-width: 600px) {
+  .video-cta-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

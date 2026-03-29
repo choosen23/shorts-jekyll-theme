@@ -116,6 +116,23 @@
     border-top: 1px solid var(--border);
     margin: 32px 0;
   }
+
+  img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin: 24px 0;
+    object-fit: cover;
+  }
+
+  small {
+    display: block;
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    margin-top: -16px;
+    margin-bottom: 20px;
+  }
 }
 
 // Sources
@@ -150,4 +167,18 @@
     color: var(--brand);
     &:hover { opacity: 0.8; }
   }
+}
+
+// Cover images
+.hero-image-actual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.post-card-image-actual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

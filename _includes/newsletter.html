@@ -1,0 +1,10 @@
+{% if site.newsletter_enabled %}
+<div class="sidebar-section newsletter-box">
+  <h3 class="sidebar-title">Newsletter</h3>
+  <p class="newsletter-desc">{{ site.newsletter_description | default: "Weekly insights in your inbox" }}</p>
+  <form action="{{ site.newsletter_action }}" method="POST" class="newsletter-form">
+    <input type="email" name="email" placeholder="Your email" required class="newsletter-input">
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+</div>
+{% endif %}

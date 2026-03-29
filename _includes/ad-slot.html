@@ -1,0 +1,5 @@
+{% if site.ads_enabled %}
+<div class="ad-slot ad-slot-{{ include.position | default: 'default' }}">
+  {{ site.ads_code }}
+</div>
+{% endif %}

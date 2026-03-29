@@ -1,0 +1,8 @@
+{% if site.affiliate_enabled %}
+<div class="affiliate-cta">
+  <p>{{ page.affiliate_text | default: site.affiliate_default_text | default: "Enjoyed this? Check out our recommended resources." }}</p>
+  {% if page.affiliate_url or site.affiliate_default_url %}
+  <a href="{{ page.affiliate_url | default: site.affiliate_default_url }}" class="btn btn-primary" target="_blank" rel="noopener">Learn More</a>
+  {% endif %}
+</div>
+{% endif %}

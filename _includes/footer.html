@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="footer-title">{{ site.title }}</span>
+      <p class="footer-desc">{{ site.description }}</p>
+    </div>
+    <div class="footer-social">
+      {% if site.social.youtube %}<a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+      {% if site.social.tiktok %}<a href="{{ site.social.tiktok }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+      {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+    </div>
+  </div>
+</footer>

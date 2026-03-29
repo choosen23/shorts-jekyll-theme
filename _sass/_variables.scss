@@ -1,0 +1,16 @@
+// Channel colors — overridden per channel via _config.yml
+// Jekyll doesn't natively pass config vars to SCSS, so we use CSS custom properties
+:root {
+  --brand: #7c3aed;
+  --accent: #c084fc;
+  --bg: #ffffff;
+  --bg-secondary: #f8f7ff;
+  --text: #1a1a2e;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e7eb;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+}

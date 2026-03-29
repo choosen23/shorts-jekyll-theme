@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="container">
+      {% if page.categories %}
+      <div class="post-categories">
+        {% for cat in page.categories %}
+        <span class="post-category">{{ cat }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time>{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.reading_time %}
+        <span class="meta-sep">&middot;</span>
+        <span>{{ page.reading_time }} min read</span>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="post-content-grid">
+      <div class="post-body">
+        {% include ad-slot.html position="top" %}
+
+        {{ content }}
+
+        {% if page.sources and page.sources.size > 0 %}
+        <div class="post-sources">
+          <h3>Sources</h3>
+          <ul>
+            {% for source in page.sources %}
+            <li>
+              {% if source.url %}<a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }}</a>
+              {% else %}{{ source.title }}{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% include affiliate-cta.html %}
+      </div>
+    </div>
+  </div>
+</article>

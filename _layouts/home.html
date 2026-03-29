@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% include hero.html %}
+
+<div class="container">
+  <div class="home-grid">
+    <div class="home-main">
+      <h2 class="section-title">Latest</h2>
+      <div class="post-grid">
+        {% for post in site.posts limit:9 %}
+          {% include post-card.html post=post %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <aside class="home-sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Most Popular</h3>
+        {% assign popular = site.posts | sort: "reading_time" | reverse %}
+        {% for post in popular limit:5 %}
+        <a href="{{ post.url | relative_url }}" class="popular-item">
+          <span class="popular-number">{{ forloop.index }}</span>
+          <span class="popular-title">{{ post.title }}</span>
+        </a>
+        {% endfor %}
+      </div>
+
+      {% include newsletter.html %}
+
+      {% if site.categories.size > 0 %}
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Categories</h3>
+        <div class="tag-cloud">
+          {% for category in site.categories %}
+          <a href="#" class="tag">{{ category[0] }} <span class="tag-count">{{ category[1].size }}</span></a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</div>

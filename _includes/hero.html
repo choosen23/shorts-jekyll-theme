@@ -1,0 +1,26 @@
+{% assign featured = site.posts.first %}
+{% if featured %}
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        {% if featured.categories %}
+        <span class="hero-category">{{ featured.categories | first }}</span>
+        {% endif %}
+        <h1 class="hero-title"><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h1>
+        <p class="hero-excerpt">{{ featured.excerpt | strip_html | truncate: 160 }}</p>
+        <div class="hero-meta">
+          <time>{{ featured.date | date: "%B %d, %Y" }}</time>
+          {% if featured.reading_time %}
+          <span class="meta-sep">&middot;</span>
+          <span>{{ featured.reading_time }} min read</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-placeholder"></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

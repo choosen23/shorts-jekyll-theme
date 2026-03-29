@@ -2,6 +2,29 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "description": {{ page.description | jsonify }}{% if page.cover_image %},
+  "image": "{{ page.cover_image }}"{% endif %},
+  "author": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }}
+  }{% if page.youtube_url %},
+  "isBasedOn": {
+    "@type": "VideoObject",
+    "url": "{{ page.youtube_url }}"
+  }{% endif %}
+}
+</script>
+
 <article class="post-single">
   <header class="post-header">
     <div class="container">
@@ -29,6 +52,8 @@ layout: default
         {% include ad-slot.html position="top" %}
 
         {{ content }}
+
+        {% include video-cta.html %}
 
         {% if page.sources and page.sources.size > 0 %}
         <div class="post-sources">
